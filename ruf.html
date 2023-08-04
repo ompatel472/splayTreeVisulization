@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+  <style type="text/css">
+      .alert-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  display: none;
+}
+
+.alert-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.alert-icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-image: url('icon.png');
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.alert-title {
+  margin: 0;
+  font-size: 20px;
+}
+
+.alert-close {
+  border: none;
+  background: none;
+  font-size: 20px;
+  margin-left: auto;
+  cursor: pointer;
+  outline: none;
+}
+
+.alert-body {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+  </style>
+  
+</head>
+<body>
+
+    <div class="alert-message">
+      <div class="alert-header">
+        <span class="alert-icon"></span>
+        <h3 class="alert-title"></h3>
+        <button class="alert-close">&times;</button>
+      </div>
+      <div class="alert-body"></div>
+    </div>
+<script type="text/javascript">
+  
+  function showAlert(title, message) {
+  var alertMessage = document.querySelector(".alert-message");
+  // var alertIcon = document.querySelector(".alert-icon");
+  var alertTitle = document.querySelector(".alert-title");
+  var alertBody = document.querySelector(".alert-body");
+  
+
+
+  alertMessage.style.display = "block";
+  alertTitle.textContent = title;
+  alertBody.textContent = message;
+
+
+
+  // if (icon) {
+  //   alertIcon.style.backgroundImage = "url('https://im4.ezgif.com/tmp/ezgif-4-8bb4c8ec9d.png')";
+  // } else {
+  //   alertIcon.style.display = "none";
+  // }
+}
+
+function hideAlert() {
+  var alertMessage = document.querySelector(".alert-message");
+  alertMessage.style.display = "none";
+}
+
+document.querySelector(".alert-close").addEventListener("click", hideAlert);
+
+
+</script>
+</html>
